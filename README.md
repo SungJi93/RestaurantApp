@@ -2,6 +2,7 @@
 UMBC IS420 23SP Project. Restaurant review app that has multiple sql tables and interconnected.
 
 This app includes serveral features as followed:
+
 Feature 1
 Create a new customer. Input includes customer name, address, state, zip, email. This feature checks whether any customer with the same email exists. If so, it prints a message 'the client already exists' and updates address, state, and zip. Otherwise, it generates a new customer ID (using sequence) and inserts a row into the customer table with given ID, name, address, state, zip, email and credit (as zero). Please also print out the new customer ID.
  
