@@ -16,3 +16,25 @@ BEGIN
         WHERE r.resstatus = 'open' AND UPPER(c.catname) LIKE UPPER('%'||p_category_name||'%');
     RETURN v_cursor;
 END;
+
+--To Call this function and see the result
+DECLARE
+    v_resname restaurant.resname%TYPE;
+    v_resavgreviewscore restaurant.resavgreviewscore%TYPE;
+    v_resavgwaittime restaurant.resavgwaittime%TYPE;
+    v_reszipcode restaurant.reszipcode%TYPE;
+    v_cursor SYS_REFCURSOR;
+BEGIN
+    v_cursor := search_restaurant('fast');
+    LOOP
+        FETCH v_cursor INTO v_resname, v_resavgreviewscore, v_resavgwaittime, v_reszipcode;
+        EXIT WHEN v_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE(v_resname||', '||v_resavgreviewscore||', '||v_resavgwaittime||', '||v_reszipcode);
+    END LOOP;
+    CLOSE v_cursor;
+END;
+
+--To execute the function
+BEGIN
+    search_restaurant('fast');
+END;
