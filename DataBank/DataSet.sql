@@ -1,12 +1,4 @@
--- DataBank - Last updated 04/19/2023 07:45PM EST
-
--- T02.3: insert date to discount
-INSERT INTO discount (did, discount_description, discount_type) 
-	VALUES (discount_seq.nextval, 'Free delivery', 1);
-INSERT INTO discount (did, discount_description, discount_type) 
-	VALUES (discount_seq.nextval, '10% off total charge', 2);
-INSERT INTO discount (did, discount_description, discount_type) 
-	VALUES (discount_seq.nextval, '20% off total charge', 3);
+-- DataBank - Last updated 05/04/2023 08:12PM EST
 
 -- T03.3: insert data to saletax
 INSERT INTO salestax
